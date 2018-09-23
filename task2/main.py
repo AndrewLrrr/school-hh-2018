@@ -138,8 +138,8 @@ o...
 # 4. В противном случае, генерируем список всех возможных площадей от y=min, x=max (максимально
 #    широкий прямоугольник) до y=max, x=min (максимально высокий прямоугольник);
 # 5. Берем крайнюю левую вершину (0, 0);
-# 6. Выбираем для нее наиболее оптимальный прямоугольник,который содержит строго одну вакансию и
-#    не выходит за пределы карты;
+# 6. Выбираем для нее наиболее оптимальный прямоугольник,который содержит строго одну вакансию,
+#    не выходит за пределы карты и не пересекается с другими прямоугольниками;
 # 7. Выбираем следующую крайнюю левую свободную вершину и возвращаемся в пункт 6;
 # 8. Если прямоугольник не содержит вакансий или вакансий больше одной или он выходит за пределы
 #    карты, то выбираем следующий, более узкий прямоугольник;
@@ -389,70 +389,3 @@ while True:
         break
 
 print_result(split_map(inp), inp)
-
-
-#
-# """
-# oo.....o
-# ...o.o..
-# ...o...o
-# ....o...
-# """
-#
-#
-
-# if __name__ == '__main__':
-#     source = """
-#     .o...o.o
-#     ..o.....
-#     ........
-#     oo..o..o
-#     """
-#
-#     inp = []
-#
-#     for l in map(lambda t: t.strip(), source.split('\n')):
-#         if l:
-#             inp.append(list(l))
-#
-#     import timeit
-#     print(timeit.timeit("split_map(inp)", setup="from __main__ import split_map, inp", number=1))
-#     print_result(split_map(inp), inp)
-#     print()
-#
-#     source2 = """
-#     .o.o....
-#     ........
-#     ....o...
-#     ........
-#     .....o..
-#     ........
-#     """
-#
-#     inp2 = []
-#
-#     for l in map(lambda t: t.strip(), source2.split('\n')):
-#         if l:
-#             inp2.append(list(l))
-#
-#     print(timeit.timeit("split_map(inp2)", setup="from __main__ import split_map, inp2", number=1))
-#     print_result(split_map(inp2), inp2)
-#
-#     source3 = """
-#     .o.o....
-#     .o.o....
-#     ........
-#     ........
-#     ........
-#     ........
-#     """
-#
-#     inp3 = []
-#
-#     for l in map(lambda t: t.strip(), source3.split('\n')):
-#         if l:
-#             inp3.append(list(l))
-#
-#     # split_map(inp)
-#     print(timeit.timeit("split_map(inp3)", setup="from __main__ import split_map, inp3", number=1))
-#     print_result(split_map(inp3), inp3)

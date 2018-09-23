@@ -1,6 +1,6 @@
 import unittest
 
-from task2 import (
+from task2.main import (
     get_init_rectangles,
     get_all_ratios_of_rectangle,
     is_point_in_rectangle,
@@ -12,7 +12,7 @@ from task2 import (
 )
 
 
-class TestUtils(unittest.TestCase):
+class TestUnits(unittest.TestCase):
     def test_is_input_data_correct(self):
         self.assertTrue(is_input_data_correct(32, 4))
         self.assertTrue(is_input_data_correct(36, 4))

@@ -199,6 +199,7 @@ def split_map(m):
                 for r in rectangles:
                     if is_point_in_rectangle(r, vertex):
                         v_status = False
+                        break
                 if not v_status:
                     continue
                 for ratio in ratios:
